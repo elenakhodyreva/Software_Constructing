@@ -1,0 +1,5 @@
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Lib\bin\Debug\Kpo4381_nmv.Lib.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Lib\bin\Debug\Kpo4381_nmv.Lib.pdb
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Lib\obj\Debug\Kpo4381_nmv.Lib.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Lib\obj\Debug\Kpo4381_nmv.Lib.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Lib\obj\Debug\Kpo4381_nmv.Lib.pdb
