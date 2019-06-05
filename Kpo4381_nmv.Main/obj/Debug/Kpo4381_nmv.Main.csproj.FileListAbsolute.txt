@@ -9,3 +9,4 @@ C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КП
 C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Main\obj\Debug\Kpo4381_nmv.Main.pdb
 C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Main\bin\Debug\Kpo4381_nmv.Lib.dll
 C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Main\bin\Debug\Kpo4381_nmv.Lib.pdb
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\Kpo4381_nmv.Main\obj\Debug\Kpo4381.nmv.Main.FrmMaterial.resources
