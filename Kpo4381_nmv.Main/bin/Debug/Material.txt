@@ -1,0 +1,3 @@
+Aluminiy|M|100|209,3
+Steclovata|T|100|0,035
+Glina|D|20|0,73

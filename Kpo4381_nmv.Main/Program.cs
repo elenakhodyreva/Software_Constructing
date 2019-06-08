@@ -14,6 +14,8 @@ namespace Kpo4381_nmv.Main
         [STAThread]
         static void Main()
         {
+            Kpo4381.Lib.AppGlobalSettings.Initialize();
+
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());

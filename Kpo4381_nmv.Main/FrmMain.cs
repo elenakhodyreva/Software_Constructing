@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Kpo4381.nmv.Lib;
 using Kpo4381.nmv.Main;
 using Kpo4381.nmv.Lib.source.my_classes;
+using Kpo4381.Lib;
 
 namespace Kpo4381_nmv.Main
 {
@@ -17,11 +18,15 @@ namespace Kpo4381_nmv.Main
     {
        // private List<Material> materialList = null;
         private BindingSource bsMaterials = new BindingSource();
+        
 
         public Form1()
         {
             InitializeComponent();
-            
+
+            //Вывести настройки на главную форму
+            tbLogPath.Text = AppGlobalSettings.getLogPath;
+            tbDataFileName.Text = AppGlobalSettings.getDataFileName;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -43,12 +48,24 @@ namespace Kpo4381_nmv.Main
 
 
                 //новое задание
-                MockMaterialListCommand loader = new MockMaterialListCommand();
+                IMaterialListLoader loader = new MaterialListTestLoader();
                 loader.Execute();
 
                 //dgvMaterials.DataSource = loader.materialList;
 
-                bsMaterials.DataSource = loader.materialList;
+                //загрузка из файла
+                //LoadMaterialListCommand fileLoader = new LoadMaterialListCommand(AppGlobalSettings.getDataFileName);
+
+
+                //интерфейс
+                IMaterialListLoader fileLoader = new MaterialListSplitFileLoader(AppGlobalSettings.getDataFileName);
+                fileLoader.Execute();
+
+                //from test storage
+                bsMaterials.DataSource = loader.getMaterials;
+
+                //from file
+                //bsMaterials.DataSource = fileLoader.getMaterials;
                 dgvMaterials.DataSource = bsMaterials;
             }
 

@@ -32,10 +32,12 @@
             this.mmFile = new System.Windows.Forms.ToolStripMenuItem();
             this.mnExit = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpen = new System.Windows.Forms.ToolStripMenuItem();
-            this.SStatus = new System.Windows.Forms.StatusStrip();
-            this.dgvMaterials = new System.Windows.Forms.DataGridView();
             this.mmMaterials = new System.Windows.Forms.ToolStripMenuItem();
             this.mnOpenMaterial = new System.Windows.Forms.ToolStripMenuItem();
+            this.SStatus = new System.Windows.Forms.StatusStrip();
+            this.dgvMaterials = new System.Windows.Forms.DataGridView();
+            this.tbLogPath = new System.Windows.Forms.TextBox();
+            this.tbDataFileName = new System.Windows.Forms.TextBox();
             this.MMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMaterials)).BeginInit();
             this.SuspendLayout();
@@ -47,7 +49,7 @@
             this.mmMaterials});
             this.MMenu.Location = new System.Drawing.Point(0, 0);
             this.MMenu.Name = "MMenu";
-            this.MMenu.Size = new System.Drawing.Size(284, 24);
+            this.MMenu.Size = new System.Drawing.Size(414, 24);
             this.MMenu.TabIndex = 0;
             this.MMenu.Text = "menuStrip1";
             // 
@@ -63,32 +65,16 @@
             // mnExit
             // 
             this.mnExit.Name = "mnExit";
-            this.mnExit.Size = new System.Drawing.Size(152, 22);
+            this.mnExit.Size = new System.Drawing.Size(121, 22);
             this.mnExit.Text = "Выход";
             this.mnExit.Click += new System.EventHandler(this.mnExit_Click);
             // 
             // mnOpen
             // 
             this.mnOpen.Name = "mnOpen";
-            this.mnOpen.Size = new System.Drawing.Size(152, 22);
+            this.mnOpen.Size = new System.Drawing.Size(121, 22);
             this.mnOpen.Text = "Открыть";
             this.mnOpen.Click += new System.EventHandler(this.mnOpen_Click);
-            // 
-            // SStatus
-            // 
-            this.SStatus.Location = new System.Drawing.Point(0, 239);
-            this.SStatus.Name = "SStatus";
-            this.SStatus.Size = new System.Drawing.Size(284, 22);
-            this.SStatus.TabIndex = 1;
-            this.SStatus.Text = "statusStrip1";
-            // 
-            // dgvMaterials
-            // 
-            this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMaterials.Location = new System.Drawing.Point(13, 28);
-            this.dgvMaterials.Name = "dgvMaterials";
-            this.dgvMaterials.Size = new System.Drawing.Size(240, 150);
-            this.dgvMaterials.TabIndex = 2;
             // 
             // mmMaterials
             // 
@@ -105,11 +91,43 @@
             this.mnOpenMaterial.Text = "Открыть данные материала";
             this.mnOpenMaterial.Click += new System.EventHandler(this.mnOpenMaterial_Click);
             // 
+            // SStatus
+            // 
+            this.SStatus.Location = new System.Drawing.Point(0, 258);
+            this.SStatus.Name = "SStatus";
+            this.SStatus.Size = new System.Drawing.Size(414, 22);
+            this.SStatus.TabIndex = 1;
+            this.SStatus.Text = "statusStrip1";
+            // 
+            // dgvMaterials
+            // 
+            this.dgvMaterials.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMaterials.Location = new System.Drawing.Point(13, 28);
+            this.dgvMaterials.Name = "dgvMaterials";
+            this.dgvMaterials.Size = new System.Drawing.Size(240, 150);
+            this.dgvMaterials.TabIndex = 2;
+            // 
+            // tbLogPath
+            // 
+            this.tbLogPath.Location = new System.Drawing.Point(13, 204);
+            this.tbLogPath.Name = "tbLogPath";
+            this.tbLogPath.Size = new System.Drawing.Size(100, 20);
+            this.tbLogPath.TabIndex = 3;
+            // 
+            // tbDataFileName
+            // 
+            this.tbDataFileName.Location = new System.Drawing.Point(138, 204);
+            this.tbDataFileName.Name = "tbDataFileName";
+            this.tbDataFileName.Size = new System.Drawing.Size(100, 20);
+            this.tbDataFileName.TabIndex = 4;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(414, 280);
+            this.Controls.Add(this.tbDataFileName);
+            this.Controls.Add(this.tbLogPath);
             this.Controls.Add(this.dgvMaterials);
             this.Controls.Add(this.SStatus);
             this.Controls.Add(this.MMenu);
@@ -135,6 +153,8 @@
         private System.Windows.Forms.DataGridView dgvMaterials;
         private System.Windows.Forms.ToolStripMenuItem mmMaterials;
         private System.Windows.Forms.ToolStripMenuItem mnOpenMaterial;
+        private System.Windows.Forms.TextBox tbLogPath;
+        private System.Windows.Forms.TextBox tbDataFileName;
     }
 }
 

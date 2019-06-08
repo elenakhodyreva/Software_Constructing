@@ -12,12 +12,12 @@ namespace Kpo4381.nmv.Lib
         public static void ErrorLog(string message)
         {
             
-            File.AppendAllText("error.log", DateTime.Now + message+ "\n");
+            File.AppendAllText("error.log", DateTime.Now + message);
         }
 
         public static void ErrorLog(Exception e)
         {
-            File.AppendAllText("error.log", e.Message + "\n");
+            File.AppendAllText("error.log", e.Message);
         }
     }
 }

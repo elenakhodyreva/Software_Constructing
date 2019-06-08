@@ -7,25 +7,24 @@ using Kpo4381.nmv.Lib.source.my_classes;
 
 namespace Kpo4381.nmv.Lib
 {
-    public class MockMaterialListCommand
+    public class MaterialListTestLoader: IMaterialListLoader
     {
         private readonly string _dataFileName = "";
 
-        private List<Material> _materialList;
+        private List<Material> materials;
+        private LoadStatus loadStatus = LoadStatus.None;
 
-        public MockMaterialListCommand()
+        public MaterialListTestLoader()
         {
-            this._materialList = new List<Material>();
+            this.materials = new List<Material>();
         }
 
-        public List<Material> materialList
-        {
-            get { return _materialList; }
-        }
+        public List<Material> getMaterials { get { return materials; } }
+        public LoadStatus getLoadStatus { get { return loadStatus; } }
 
         public void Execute()
         {
-                    _materialList.Add(new Material() {
+                    materials.Add(new Material() {
                         name = "Алюминий",
                         materialType = 'M',
                         humidity = 100,
@@ -41,14 +40,14 @@ namespace Kpo4381.nmv.Lib
                     //    coefficient = 0.035
                     //};
 
-                    _materialList.Add(new Material() {
+                    materials.Add(new Material() {
                         name = "Стекловата",
                         materialType = 'T',
                         humidity = 100,
                         coefficient = 0.035
                     });
 
-                    _materialList.Add(new Material() {
+                    materials.Add(new Material() {
                         name = "Глина",
                         materialType = 'Д',
                         humidity = 20,
