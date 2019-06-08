@@ -61,11 +61,19 @@ namespace Kpo4381_nmv.Main
                 IMaterialListLoader fileLoader = new MaterialListSplitFileLoader(AppGlobalSettings.getDataFileName);
                 fileLoader.Execute();
 
+                //using factory
+                IMaterialFactory materialFactory = new MaterialTestFactory();
+                IMaterialListLoader factoryLoader = materialFactory.CreateMaterialListLoader();
+                factoryLoader.Execute();
+
                 //from test storage
-                bsMaterials.DataSource = loader.getMaterials;
+                //bsMaterials.DataSource = loader.getMaterials;
 
                 //from file
                 //bsMaterials.DataSource = fileLoader.getMaterials;
+
+                //from factory
+                bsMaterials.DataSource = factoryLoader.getMaterials;
                 dgvMaterials.DataSource = bsMaterials;
             }
 
