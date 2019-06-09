@@ -66,6 +66,10 @@ namespace Kpo4381_nmv.Main
                 IMaterialListLoader factoryLoader = materialFactory.CreateMaterialListLoader();
                 factoryLoader.Execute();
 
+                //laba4
+                MaterialNewLoader_laba4 newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
+                newLoader.Execute();
+
                 //from test storage
                 //bsMaterials.DataSource = loader.getMaterials;
 
@@ -73,7 +77,10 @@ namespace Kpo4381_nmv.Main
                 //bsMaterials.DataSource = fileLoader.getMaterials;
 
                 //from factory
-                bsMaterials.DataSource = factoryLoader.getMaterials;
+                //bsMaterials.DataSource = factoryLoader.getMaterials;
+                bsMaterials.DataSource = newLoader.getMaterials;
+                //laba4 from new file
+
                 dgvMaterials.DataSource = bsMaterials;
             }
 

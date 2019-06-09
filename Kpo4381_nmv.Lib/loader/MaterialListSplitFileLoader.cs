@@ -62,13 +62,13 @@ namespace Kpo4381.nmv.Lib
                     int mathumidity = Int32.Parse(arr[2]);
                     double matcoefficient = Double.Parse(arr[3]);
 
-                    Material material = new Material()
-                    {
-                        //name = arr[0],
-                        //materialType = Char.Parse(arr[1]),
-                        //humidity = Int32.Parse(arr[2]),
-                        //coefficient = Double.Parse(arr[3])
-                    };
+                    //Material material = new Material()
+                    //{
+                    //    //name = arr[0],
+                    //    //materialType = Char.Parse(arr[1]),
+                    //    //humidity = Int32.Parse(arr[2]),
+                    //    //coefficient = Double.Parse(arr[3])
+                    //};
 
                     materials.Add(new Material()
                     {

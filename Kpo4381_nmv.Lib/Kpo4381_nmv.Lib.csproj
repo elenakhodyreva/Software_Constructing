@@ -49,6 +49,7 @@
     <Compile Include="loader\IMaterialListLoader.cs" />
     <Compile Include="loader\MaterialListSplitFileLoader.cs" />
     <Compile Include="loader\MaterialListTestLoader.cs" />
+    <Compile Include="loader\MaterialNewLoader_laba4.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="saver\IMaterialListSaver.cs" />
     <Compile Include="saver\MaterialListSplitFileSaver.cs" />
