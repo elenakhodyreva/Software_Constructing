@@ -1,0 +1,11 @@
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\UnitTestProject_KPO.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\UnitTestProject_KPO.pdb
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\Kpo4381_nmv.Lib.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\Kpo4381_nmv.Main.exe
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\Kpo4381_nmv.Lib.pdb
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\Kpo4381_nmv.Main.pdb
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\bin\Debug\ru\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\obj\Debug\UnitTestProject_KPO.csprojResolveAssemblyReference.cache
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\obj\Debug\UnitTestProject_KPO.dll
+C:\Users\Public\Documents\учеба\Учеба\3 курс\2 семестр\КПО\laby_kpo\Kpo4381_nmv\UnitTestProject_KPO\obj\Debug\UnitTestProject_KPO.pdb

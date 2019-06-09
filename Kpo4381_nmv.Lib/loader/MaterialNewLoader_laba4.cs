@@ -17,6 +17,8 @@ namespace Kpo4381.nmv.Lib
         public List<Material> getMaterials { get { return materials; } }
         public LoadStatus getLoadStatus { get { return loadStatus; } }
 
+        public string getFileName { get { return dataFileName; } }
+
         public MaterialNewLoader_laba4(string fileName)
         {
             dataFileName = fileName;
