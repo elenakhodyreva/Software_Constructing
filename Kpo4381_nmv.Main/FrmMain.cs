@@ -19,6 +19,7 @@ namespace Kpo4381_nmv.Main
        // private List<Material> materialList = null;
         private BindingSource bsMaterials = new BindingSource();
         
+        MaterialNewLoader_laba4 newLoader;
 
         public Form1()
         {
@@ -62,12 +63,15 @@ namespace Kpo4381_nmv.Main
                 fileLoader.Execute();
 
                 //using factory
-                IMaterialFactory materialFactory = new MaterialTestFactory();
+                IMaterialFactory materialFactory = new MaterialSplitFileFactory();
                 IMaterialListLoader factoryLoader = materialFactory.CreateMaterialListLoader();
                 factoryLoader.Execute();
 
                 //laba4
-                MaterialNewLoader_laba4 newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
+                newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
+
+                //делегат после каждой строки
+                newLoader.SetAfterRowWasRead(this.OnAfterRowWasRead);
                 newLoader.Execute();
 
                 //from test storage
@@ -78,8 +82,11 @@ namespace Kpo4381_nmv.Main
 
                 //from factory
                 //bsMaterials.DataSource = factoryLoader.getMaterials;
-                bsMaterials.DataSource = newLoader.getMaterials;
+
+
                 //laba4 from new file
+                bsMaterials.DataSource = newLoader.getMaterials;
+                
 
                 dgvMaterials.DataSource = bsMaterials;
             }
@@ -109,7 +116,15 @@ namespace Kpo4381_nmv.Main
             frmMaterial.SetMaterial(material);
 
             frmMaterial.ShowDialog();
+
             
+            
+            
+        }
+
+        private void OnAfterRowWasRead(string currentRow)
+        {
+            Console.WriteLine(currentRow);
         }
     }
 }

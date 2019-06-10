@@ -8,6 +8,8 @@ using System.IO;
 
 namespace Kpo4381.nmv.Lib
 {
+    
+
     public enum LoadStatus
     {
         None= 0,
@@ -23,6 +25,8 @@ namespace Kpo4381.nmv.Lib
         private List<Material> materials;
         private LoadStatus loadStatus= LoadStatus.None;
 
+        
+
         public List<Material> getMaterials { get { return materials; } }
         public LoadStatus getLoadStatus { get { return loadStatus; } }
 
@@ -30,7 +34,10 @@ namespace Kpo4381.nmv.Lib
         {
             dataFileName = fileName;
             materials = new List<Material>();
+            
         }
+
+
 
         public void Execute()
         {
@@ -70,6 +77,8 @@ namespace Kpo4381.nmv.Lib
                     //    //coefficient = Double.Parse(arr[3])
                     //};
 
+
+
                     materials.Add(new Material()
                     {
                         name = arr[0],
@@ -77,8 +86,6 @@ namespace Kpo4381.nmv.Lib
                         humidity= Int32.Parse(arr[2]),
                         coefficient= Double.Parse(arr[3]) }
                     );
-
-                    //по ошибке???
                 }
             }
 

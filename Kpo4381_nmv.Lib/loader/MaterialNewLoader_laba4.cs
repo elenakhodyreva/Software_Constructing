@@ -8,11 +8,16 @@ using Kpo4381.nmv.Lib.source.my_classes;
 
 namespace Kpo4381.nmv.Lib
 {
+    public delegate void OnLoadFileDelegate(string curentRow);
+
     public class MaterialNewLoader_laba4 :IMaterialListLoader
     {
         private readonly string dataFileName = "";
         private List<Material> materials;
         private LoadStatus loadStatus = LoadStatus.None;
+
+        //делегат
+        private OnLoadFileDelegate onAfterRowWasRead;
 
         public List<Material> getMaterials { get { return materials; } }
         public LoadStatus getLoadStatus { get { return loadStatus; } }
@@ -23,6 +28,22 @@ namespace Kpo4381.nmv.Lib
         {
             dataFileName = fileName;
             materials = new List<Material>();
+            onAfterRowWasRead = null;
+        }
+
+        //методы доступа к делегату сеттер
+        public void SetAfterRowWasRead(OnLoadFileDelegate onAfterRowWasRead)
+        {
+            this.onAfterRowWasRead = onAfterRowWasRead;
+        }
+
+        //геттер
+        public OnLoadFileDelegate AfterRowWasRead
+        {
+            get
+            {
+                return onAfterRowWasRead;
+            }
         }
 
         //Инициализировать статус выполнения чтения данных
@@ -56,7 +77,10 @@ namespace Kpo4381.nmv.Lib
                 {
                     //Прочитать очередную строку
                     string str = reader.ReadLine();
-                    
+
+                    if (onAfterRowWasRead != null)
+                        onAfterRowWasRead(str);
+
                     //получить имя материала первые 20 символов
                     string matname =str.Substring(0,20).Trim();
 
