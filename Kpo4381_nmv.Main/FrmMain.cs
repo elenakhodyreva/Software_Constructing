@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Diagnostics;
+
 using Kpo4381.nmv.Lib;
 using Kpo4381.nmv.Main;
 using Kpo4381.nmv.Lib.source.my_classes;
@@ -44,8 +39,7 @@ namespace Kpo4381_nmv.Main
         {
             try
             {
-                //throw new NotImplementedException();
-                //throw new Exception("Неправильные входные параметры");
+
 
 
                 //новое задание
@@ -68,11 +62,11 @@ namespace Kpo4381_nmv.Main
                 factoryLoader.Execute();
 
                 //laba4
-                newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
+                //newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
 
-                //делегат после каждой строки
-                newLoader.SetAfterRowWasRead(this.OnAfterRowWasRead);
-                newLoader.Execute();
+                ////laba6 делегат после каждой строки
+                //newLoader.SetAfterRowWasRead(this.OnAfterRowWasRead);
+                //newLoader.Execute();
 
                 //from test storage
                 //bsMaterials.DataSource = loader.getMaterials;
@@ -81,18 +75,21 @@ namespace Kpo4381_nmv.Main
                 //bsMaterials.DataSource = fileLoader.getMaterials;
 
                 //from factory
-                //bsMaterials.DataSource = factoryLoader.getMaterials;
+                bsMaterials.DataSource = factoryLoader.getMaterials;
 
 
                 //laba4 from new file
-                bsMaterials.DataSource = newLoader.getMaterials;
+                //bsMaterials.DataSource = newLoader.getMaterials;
                 
 
                 dgvMaterials.DataSource = bsMaterials;
+
+                //для проверки записи в файл исключения
+                //throw new NotImplementedException();
             }
 
             //Обработка исключения "Метод не реализован"
-            catch(NotImplementedException ex)
+            catch (NotImplementedException ex)
             {
                 MessageBox.Show("Ошибка №1 " + ex.Message);
                 LogUtility.ErrorLog("Ошибка №1 " + ex.Message);

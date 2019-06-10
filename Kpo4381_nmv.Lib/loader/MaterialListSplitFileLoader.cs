@@ -1,15 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using Kpo4381.nmv.Lib.source.my_classes;
 using System.IO;
 
 namespace Kpo4381.nmv.Lib
 {
-    
-
     public enum LoadStatus
     {
         None= 0,
@@ -43,9 +39,13 @@ namespace Kpo4381.nmv.Lib
         {
             materials = new List<Material>();
 
+            //утверждение
+            System.Diagnostics.Debug.Assert(dataFileName != "");
+
             if(dataFileName== null || dataFileName.Equals(""))
             {
-                throw new Exception("имя файла не указано");
+                
+                //throw new Exception("имя файла не указано");
             }
 
             if (!File.Exists(dataFileName))
