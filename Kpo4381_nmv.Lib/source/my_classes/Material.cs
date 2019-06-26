@@ -17,7 +17,7 @@ namespace Kpo4381.nmv.Lib.source.my_classes
 
         public Material()
         {
-            //хотя они так и так по умолчанию должны инициализироваться без явного указания
+            
             name = "";
             materialType = ' ';
             humidity = 0;

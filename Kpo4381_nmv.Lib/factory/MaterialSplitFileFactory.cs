@@ -7,7 +7,7 @@ using Kpo4381.Lib;
 
 namespace Kpo4381.nmv.Lib
 {
-    public class MaterialSplitFileFactory : IMaterialFactory
+    internal class MaterialSplitFileFactory : IMaterialFactory
     {
         public IMaterialListLoader CreateMaterialListLoader()
         {

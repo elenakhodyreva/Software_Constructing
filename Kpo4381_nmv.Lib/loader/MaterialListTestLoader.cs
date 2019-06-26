@@ -7,7 +7,7 @@ using Kpo4381.nmv.Lib.source.my_classes;
 
 namespace Kpo4381.nmv.Lib
 {
-    public class MaterialListTestLoader: IMaterialListLoader
+    internal class MaterialListTestLoader: IMaterialListLoader
     {
         private readonly string _dataFileName = "";
 

@@ -13,7 +13,8 @@ namespace Kpo4381_nmv.Main
     {
        // private List<Material> materialList = null;
         private BindingSource bsMaterials = new BindingSource();
-        
+        IMaterialFactory materialFactory;
+
         MaterialNewLoader_laba4 newLoader;
 
         public Form1()
@@ -23,6 +24,10 @@ namespace Kpo4381_nmv.Main
             //Вывести настройки на главную форму
             tbLogPath.Text = AppGlobalSettings.getLogPath;
             tbDataFileName.Text = AppGlobalSettings.getDataFileName;
+
+
+            //получение объекта фабрики с помощью AppGlobalSettings
+            materialFactory = AppGlobalSettings.GetMaterialFactory;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,33 +45,18 @@ namespace Kpo4381_nmv.Main
             try
             {
 
-
-
                 //новое задание
-                IMaterialListLoader loader = new MaterialListTestLoader();
-                loader.Execute();
+                //IMaterialListLoader loader = new MaterialListTestLoader();
+                //loader.Execute();
 
                 //dgvMaterials.DataSource = loader.materialList;
 
                 //загрузка из файла
                 //LoadMaterialListCommand fileLoader = new LoadMaterialListCommand(AppGlobalSettings.getDataFileName);
 
-
                 //интерфейс
-                IMaterialListLoader fileLoader = new MaterialListSplitFileLoader(AppGlobalSettings.getDataFileName);
-                fileLoader.Execute();
-
-                //using factory
-                IMaterialFactory materialFactory = new MaterialSplitFileFactory();
-                IMaterialListLoader factoryLoader = materialFactory.CreateMaterialListLoader();
-                factoryLoader.Execute();
-
-                //laba4
-                //newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
-
-                ////laba6 делегат после каждой строки
-                //newLoader.SetAfterRowWasRead(this.OnAfterRowWasRead);
-                //newLoader.Execute();
+                //IMaterialListLoader fileLoader = new MaterialListSplitFileLoader(AppGlobalSettings.getDataFileName);
+                //fileLoader.Execute();
 
                 //from test storage
                 //bsMaterials.DataSource = loader.getMaterials;
@@ -74,28 +64,45 @@ namespace Kpo4381_nmv.Main
                 //from file
                 //bsMaterials.DataSource = fileLoader.getMaterials;
 
-                //from factory
-                bsMaterials.DataSource = factoryLoader.getMaterials;
-
-
                 //laba4 from new file
-                //bsMaterials.DataSource = newLoader.getMaterials;
-                
-
-                dgvMaterials.DataSource = bsMaterials;
+                //newLoader.Execute();
 
                 //для проверки записи в файл исключения
                 //throw new NotImplementedException();
+                //throw new MyOwnException();
+                //throw new MyOwnException("Другое сообщение");
+
+                //using factory
+                IMaterialListLoader factoryLoader = materialFactory.CreateMaterialListLoader();
+                factoryLoader.Execute();
+
+                
+
+                //laba4 laba6
+                newLoader = new MaterialNewLoader_laba4("New_Materials.txt");
+
+                //laba6 указатель на метод передается в сеттер делегата
+                newLoader.SetAfterRowWasRead(this.OnAfterRowWasRead);
+                newLoader.Execute();
+
+
+                bsMaterials.DataSource = factoryLoader.getMaterials;
+                dgvMaterials.DataSource = bsMaterials;
+
+                
+            }
+        
+            catch( MyOwnException exc)
+            {
+                MessageBox.Show("Ошибка типа: " + exc.Message);
             }
 
-            //Обработка исключения "Метод не реализован"
             catch (NotImplementedException ex)
             {
                 MessageBox.Show("Ошибка №1 " + ex.Message);
                 LogUtility.ErrorLog("Ошибка №1 " + ex.Message);
             }
 
-            //обработка остальных исключений
             catch(Exception ex)
             {
                 MessageBox.Show("Ошибка №2 "+ ex.Message);
@@ -113,10 +120,7 @@ namespace Kpo4381_nmv.Main
             frmMaterial.SetMaterial(material);
 
             frmMaterial.ShowDialog();
-
-            
-            
-            
+        
         }
 
         private void OnAfterRowWasRead(string currentRow)

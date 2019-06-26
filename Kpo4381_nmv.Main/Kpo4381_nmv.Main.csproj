@@ -58,6 +58,7 @@
     <Compile Include="FrmMaterial.Designer.cs">
       <DependentUpon>FrmMaterial.cs</DependentUpon>
     </Compile>
+    <Compile Include="MyOwnException.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmMain.resx">

@@ -15,7 +15,7 @@ namespace Kpo4381.nmv.Lib
         GeneralError=-100
     }
 
-    public class MaterialListSplitFileLoader : IMaterialListLoader
+    internal class MaterialListSplitFileLoader : IMaterialListLoader
     {
         private readonly string dataFileName="";
         private List<Material> materials;
